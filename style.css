@@ -15,45 +15,140 @@ html {
 
 body {
     font-family: 'Hanken Grotesk', sans-serif;
+    background-color: rgb(37, 48, 61);
 }
 
 /* end global rules */
 
 .card {
-    
+    box-shadow: 11px 20px 40px 16px #0000001f;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 350px;
+    height: fit-content;
+    padding: 20px;
+    background-color: rgb(43, 59, 74);
+    border-radius: 15px;
 }
 
 .card .image {
-
-}
-
-.card .image img {
+    height: 20%;
+    width: 100%;
+    margin-bottom: 20px;
     position: relative;
 }
 
-.card .image img::before {
+.card .image .main {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.card .image:hover::after {
+    display: block;
+}
+
+.card .image:hover .active {
+    display: block;
+}
+
+.card .image .active {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 43%;
+    transform: translateY(-50%);
+    z-index: 1;
+    
+}
+
+.card .image::after {
     content: "";
     position: absolute;
-
-
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 255, 255, 0.34);
+    z-index: 2;
+    border-radius: 15px;
+    display: none;
+    cursor: pointer;
 }
 
 .card .des {
-
+    height: 80%;
+    width: 100%;
 }
 
 .card .des h3 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
 
+.card .des h3:hover {
+    color: aqua;
+    cursor: pointer;
 }
 
 .card .des p {
-
+    margin-bottom: 15px;
+    color: rgba(191, 195, 195, 0.995);
 }
 
-.card .des .price p {
-
+.card .des .price {
+    display: flex;
+    justify-content: space-between;
 }
 
-.card .des .price p img {
+.card .des .price p:first-child {
+    color: aqua;
+    margin-bottom: 15px;
+}
 
+.card .des .price p img:first-child {
+    margin-right: 8px;
+    position: relative;
+    top: 2px;
+}
+
+.card .des .price p:last-child {
+    color: rgba(191, 195, 195, 0.995);
+}
+
+hr {
+    background-color: #555858;
+    height: 2px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+.prof {
+    display: flex;
+}
+
+.prof img {
+    width: 40px;
+    border: white 2px solid;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.prof p {
+    position: relative;
+    top: 10px;
+}
+
+.prof span {
+    color: white;
+}
+
+.prof span:hover {
+    color: aqua;
+    cursor: pointer;
 }
